@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FinanceTracker Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { color:#171717; background:#fff; font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+         margin:0 auto; max-width:760px; padding:32px 20px 64px; }
+  h1 { line-height:1.15; margin-bottom:.25rem; }
+  h2 { font-size:1.2rem; margin-top:2rem; }
+  .muted { color:#666; margin-top:0; }
+  a { color:#0f7a74; }
+  ul { padding-left:1.25rem; }
+  li { margin-bottom:.4rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color:#f2f3f4; background:#17181a; }
+    .muted { color:#9aa0a6; }
+    a { color:#5fd0c6; }
+  }
+</style>
+</head>
+<body>
+  <h1>FinanceTracker Privacy Policy</h1>
+  <p class="muted">Effective November 5, 2026</p>
+
+  <p>FinanceTracker is a personal budgeting app for iPhone (bundle ID com.vaheovsepian.FinanceTracker). It reads your financial data only to show you where your money goes. It works with a server you run on your own computer, so your financial data is stored on your own devices, not on servers run by the developer. FinanceTracker has no sign-up, no advertising, and no analytics or tracking SDKs, and it never sells, rents, or shares your data for advertising. Access is read-only: FinanceTracker cannot move money, make payments, or change anything at your bank.</p>
+
+  <h2>Information the app accesses</h2>
+  <p>FinanceTracker accesses only the financial information you choose to connect or import, plus what you type into the app.</p>
+  <ul>
+    <li><strong>Banks and credit cards, through Plaid:</strong> account names and types, the last digits of account numbers, balances, and transactions (date, amount, merchant or description, the bank's category, and pending status). You sign in on your bank's own page inside Plaid Link. FinanceTracker never sees your bank username or password.</li>
+    <li><strong>Apple Card, Apple Cash, and Apple Savings, through Apple FinanceKit:</strong> account names and types, balances, and transactions (date, amount, description, merchant name, merchant category code, and status). You grant access in the iOS permission prompt.</li>
+    <li><strong>Statement files you import (CSV):</strong> the dates, descriptions, amounts, and categories in the file you pick.</li>
+    <li><strong>What you enter:</strong> categories you assign, notes, category rules, and monthly budget targets.</li>
+  </ul>
+  <p>FinanceTracker does not collect your name, email address, phone number, contacts, location, photos, or device identifiers. The Face ID lock is handled by iOS; the app receives only whether authentication succeeded, never your face data.</p>
+
+  <h2>How information is used</h2>
+  <p>Your information is used only to provide FinanceTracker's budgeting features to you: showing balances and transactions across your accounts, sorting transactions into spending categories and remembering the categories you choose, recognizing transfers between your own accounts so they aren't counted as spending, proposing and tracking monthly budget targets, and exporting your own data when you ask.</p>
+  <p>It is <strong>never</strong> used for advertising, marketing, credit decisions, lending, profiling, or training machine-learning models, and it is never sold, rented, or traded.</p>
+
+  <h2>Where information is stored and how it is protected</h2>
+  <p>Your financial data is stored in two places, both controlled by you: the FinanceTracker server on your own computer, and the app on your iPhone.</p>
+  <ul>
+    <li><strong>Your server:</strong> transactions, accounts, categories, and budgets are kept in a database in a folder only your computer's user account can open. The bank access tokens Plaid issues are encrypted with AES-256-GCM before they are saved.</li>
+    <li><strong>Your iPhone:</strong> the app keeps a copy for offline viewing. It is protected by iOS data protection and, when you turn it on, a Face ID or passcode lock that also hides balances in the app switcher.</li>
+    <li><strong>In transit:</strong> the app talks only to your own server. An encrypted connection, such as HTTPS through Tailscale, is recommended. Plaid's and Apple's connections to your banks are encrypted by those services.</li>
+    <li><strong>Access control:</strong> every request to your server must carry a long random access token that only your app holds.</li>
+  </ul>
+
+  <h2>Who information is shared with</h2>
+  <p>FinanceTracker shares information only with the two services below, and only to provide its features.</p>
+  <ul>
+    <li><strong><a href="https://plaid.com/legal/#end-user-privacy-policy">Plaid</a></strong> connects to the banks you choose and returns your account and transaction data. What you give Plaid when you link a bank is governed by Plaid's End User Privacy Policy. FinanceTracker sends Plaid only the tokens needed to fetch your data.</li>
+    <li><strong><a href="https://www.anthropic.com/legal/privacy">Anthropic</a></strong> (optional, off unless an API key is set) suggests a category for a merchant FinanceTracker hasn't seen before. It receives only the merchant name, amount, and date of that transaction, never account names or numbers, balances, notes, or your identity.</li>
+  </ul>
+  <p>Apple FinanceKit data is never sent to Plaid or Anthropic. FinanceTracker does not share information with anyone else, except where the law requires it.</p>
+
+  <h2>Apple Wallet data (FinanceKit)</h2>
+  <p>Data from Apple Card, Apple Cash, and Apple Savings is read only with your permission, used only for your budget, and never leaves your own devices.</p>
+  <ul>
+    <li><strong>Read-only:</strong> FinanceTracker only reads accounts, balances, and transactions. It does not create, change, or delete anything in Wallet.</li>
+    <li><strong>Your devices only:</strong> FinanceKit data goes from your iPhone to your own FinanceTracker server and nowhere else. It is not sent to Plaid, Anthropic, or the developer.</li>
+    <li><strong>Only for your budget:</strong> it is used only for the features described above, never for advertising, marketing, credit or lending decisions, or data brokering.</li>
+    <li><strong>You stay in control:</strong> you can withdraw access at any time in the iPhone Settings app, under the app's privacy permissions. Removing the Apple connection in FinanceTracker deletes its transactions from your server.</li>
+  </ul>
+
+  <h2>Export, retention, and deletion</h2>
+  <p>Your information is kept until you delete it, and you can delete any of it at any time.</p>
+  <ul>
+    <li><strong>Remove one account:</strong> swipe the connection in Accounts and tap Remove. FinanceTracker asks Plaid to revoke its access, then deletes that connection's transactions from your server and phone.</li>
+    <li><strong>Delete everything:</strong> use the server's delete-all-data function, or delete the FinanceTracker data folder on your computer and remove the app from your iPhone.</li>
+    <li><strong>Export:</strong> you can export all your transactions as a CSV file at any time.</li>
+    <li><strong>Plaid:</strong> to see or manage what Plaid holds, use Plaid Portal at <a href="https://my.plaid.com">my.plaid.com</a>.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>FinanceTracker is not directed at children under 13 and does not knowingly collect their information.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If a future version adds data collection, analytics, advertising, or a third-party service, this policy will be updated with a new effective date before that version is released. A change will never allow your financial data to be sold or used for advertising.</p>
+
+  <h2>Questions</h2>
+  <p>Email <a href="mailto:fullrangeapp@gmail.com">fullrangeapp@gmail.com</a>.</p>
+</body>
+</html>
