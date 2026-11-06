@@ -23,9 +23,9 @@
 </head>
 <body>
   <h1>FinanceTracker Privacy Policy</h1>
-  <p class="muted">Effective November 5, 2026</p>
+  <p class="muted">Effective November 6, 2026</p>
 
-  <p>FinanceTracker is a personal budgeting app for iPhone (bundle ID com.vaheovsepian.FinanceTracker). It reads your financial data only to show you where your money goes. It works with a server you run on your own computer, so your financial data is stored on your own devices, not on servers run by the developer. FinanceTracker has no sign-up, no advertising, and no analytics or tracking SDKs, and it never sells, rents, or shares your data for advertising. Access is read-only: FinanceTracker cannot move money, make payments, or change anything at your bank.</p>
+  <p>FinanceTracker is a personal budgeting app for iPhone (bundle ID com.vaheovsepian.FinanceTracker). It reads your financial data only to show you where your money goes. It works with a FinanceTracker server that you run yourself, either on your own computer or on a cloud virtual machine that you rent and control, so your financial data is stored on systems you control, not on servers run by the developer. FinanceTracker has no sign-up, no advertising, and no analytics or tracking SDKs, and it never sells, rents, or shares your data for advertising. Access is read-only: FinanceTracker cannot move money, make payments, or change anything at your bank.</p>
 
   <h2>Information the app accesses</h2>
   <p>FinanceTracker accesses only the financial information you choose to connect or import, plus what you type into the app.</p>
@@ -42,11 +42,12 @@
   <p>It is <strong>never</strong> used for advertising, marketing, credit decisions, lending, profiling, or training machine-learning models, and it is never sold, rented, or traded.</p>
 
   <h2>Where information is stored and how it is protected</h2>
-  <p>Your financial data is stored in two places, both controlled by you: the FinanceTracker server on your own computer, and the app on your iPhone.</p>
+  <p>Your financial data is stored in places you control: your FinanceTracker server (your computer or your own cloud virtual machine), its backups, and the app on your iPhone.</p>
   <ul>
-    <li><strong>Your server:</strong> transactions, accounts, categories, and budgets are kept in a database in a folder only your computer's user account can open. The bank access tokens Plaid issues are encrypted with AES-256-GCM before they are saved.</li>
+    <li><strong>Your server:</strong> transactions, accounts, categories, and budgets are kept in a database in a folder only the server's own account can open. The bank access tokens Plaid issues are encrypted with AES-256-GCM before they are saved.</li>
+    <li><strong>Backups:</strong> if you turn on backups, the server keeps a nightly copy of its database (the last 14) readable only by its administrator, and your Mac can keep a copy of the newest ones (the last 30) in a folder only your user account can open.</li>
     <li><strong>Your iPhone:</strong> the app keeps a copy for offline viewing. It is protected by iOS data protection and, when you turn it on, a Face ID or passcode lock that also hides balances in the app switcher.</li>
-    <li><strong>In transit:</strong> the app talks only to your own server. An encrypted connection, such as HTTPS through Tailscale, is recommended. Plaid's and Apple's connections to your banks are encrypted by those services.</li>
+    <li><strong>In transit:</strong> the app talks only to your own server, over an encrypted HTTPS connection. Plaid's and Apple's connections to your banks are encrypted by those services.</li>
     <li><strong>Access control:</strong> every request to your server must carry a long random access token that only your app holds.</li>
   </ul>
 
@@ -70,8 +71,9 @@
   <h2>Export, retention, and deletion</h2>
   <p>Your information is kept until you delete it, and you can delete any of it at any time.</p>
   <ul>
-    <li><strong>Remove one account:</strong> swipe the connection in Accounts and tap Remove. FinanceTracker asks Plaid to revoke its access, then deletes that connection's transactions from your server and phone.</li>
-    <li><strong>Delete everything:</strong> use the server's delete-all-data function, or delete the FinanceTracker data folder on your computer and remove the app from your iPhone.</li>
+    <li><strong>Remove one account:</strong> swipe the connection in Accounts and tap Remove. FinanceTracker asks Plaid to revoke its access, then deletes that connection's transactions from your server and phone. If Plaid can't be reached, you're told, and FinanceTracker keeps only the encrypted access token, retrying until Plaid confirms.</li>
+    <li><strong>Delete everything:</strong> use the server's delete-all-data function (it revokes every bank connection and pauses Apple Wallet syncing until you turn it on again), or delete the FinanceTracker data folder and remove the app from your iPhone.</li>
+    <li><strong>Backups:</strong> deleted data can remain in existing backups until they are replaced (about 14 days on the server and 30 days on your Mac), or you can delete the backup files yourself.</li>
     <li><strong>Export:</strong> you can export all your transactions as a CSV file at any time.</li>
     <li><strong>Plaid:</strong> to see or manage what Plaid holds, use Plaid Portal at <a href="https://my.plaid.com">my.plaid.com</a>.</li>
   </ul>
